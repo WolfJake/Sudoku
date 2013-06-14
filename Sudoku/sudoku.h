@@ -9,6 +9,7 @@ class Sudoku;
 
 class QGridLayout;
 class QPushButton;
+class QPushButtonGrid;
 
 class Sudoku : public QMainWindow
 {
@@ -21,23 +22,26 @@ public:
 private slots:
     void on_actionQuit_triggered();
 
-    void on_rowBox_valueChanged(int arg1);
-
-    void on_columnBox_valueChanged(int arg1);
-
     void number_clicked();
 
     void cell_clicked();
 
     void on_nullButton_clicked();
 
+    void validateCell();
+
+    int randomNumber(int low, int high);
+
 private:
     void initGui();
     Ui::Sudoku *ui;
 
     QGridLayout *grid;
-    QPushButton *cell[9][9];
+    QPushButtonGrid *cell[9][9];
     QPushButton *number[9];
+    int coorX;
+    int coorY;
+    bool isCellSelected;
 };
 
 #endif // SUDOKU_H

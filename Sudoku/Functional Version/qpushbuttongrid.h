@@ -19,6 +19,7 @@ public:
     int column;
     int realNumber;
     int assignedNumber;
+    int color;
 
 private:
     Ui::QPushButtonGrid *ui;

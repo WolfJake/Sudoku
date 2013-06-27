@@ -41,6 +41,8 @@ private slots:
     void sudokuErrorWiper();
 
 
+    void on_printButton_clicked();
+
 private:
     void initGui();
     Ui::Sudoku *ui;

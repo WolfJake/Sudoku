@@ -47,9 +47,10 @@ private:
     void initGui();
     Ui::Sudoku *ui;
 
-    QGridLayout *grid;
     QPushButtonGrid *cell[9][9];
     QPushButton *number[9];
+    QString crypt;
+
     int coorX;
     int coorY;
     bool isCellSelected;

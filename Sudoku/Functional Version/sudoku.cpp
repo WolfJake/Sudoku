@@ -8,6 +8,7 @@
 #include <QTime>
 #include <QtGlobal>
 #include <math.h>
+#include <QFile>
 
 Sudoku::Sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -38,6 +39,8 @@ Sudoku::~Sudoku()
 
 void Sudoku::initGui()
 {
+    coorX = -1;
+    coorY = -1;
     bool paintFlag = false;
     for (int i = 0; i < 9; i++)
     {
@@ -84,11 +87,8 @@ void Sudoku::initGui()
     ui->nullButton->setText("Erase");
     ui->nullButton->setEnabled(false);
     isCellSelected = false;
-    while(!sudokuBlankChecker())
-    {
-        sudokuErrorWiper();
-        sudokuGenerator(0);
-    }
+
+    invalidateWindow();
 }
 
 
@@ -227,6 +227,7 @@ void Sudoku::sudokuErrorWiper()
         for(int j = 0; j < 9; j++)
         {
             cell[i][j]->realNumber = 0;
+            cell[i][j]->assignedNumber = 0;
             cell[i][j]->setText("");
         }
     }
@@ -348,69 +349,62 @@ void Sudoku::validateCell()
     }
 }
 
-void Sudoku::on_printButton_clicked()
+
+void Sudoku::on_actionNew_triggered()
+{
+    sudokuErrorWiper();
+    while(!sudokuBlankChecker())
+    {
+        sudokuErrorWiper();
+        sudokuGenerator(0);
+    }
+    invalidateWindow();
+    validateWindow();
+}
+
+
+void Sudoku::on_actionOpen_triggered()
 {
     QString code[9];
     QString key[9];
     QString hint[9];
-    int binaryBuffer = 0;
-    int binaryBuffer2 = 0;
-    int testing[9][9];
 
     crypt = "";
-    int delta = 0;
     int decimal = 0;
     int digit = 0;
     QString sign;
     QString synt;
-    for (int i = 0; i < 9; i++)
-    {
-        for (int j = 0; j < 9; j++)
-        {
-            crypt = crypt.append(QString("%1").arg(cell[i][j]->realNumber));
 
-            if(!j)
+    sudokuErrorWiper();
+
+    QFile inFile("/Users/Jake/Desktop/savedGame.txt");
+    inFile.open(QIODevice::Text | QIODevice::ReadOnly);
+    QTextStream in(&inFile);
+
+    int tracker = 0;
+
+    while (!in.atEnd()) {
+            QString line = in.readLine();
+            if (line.length())
             {
-                delta = cell[i][j]->realNumber;
-                code[i] = code[i].append(QString("%1").arg((char)(delta + 96)));
-
-            }
-            else
-            {
-                delta = cell[i][j]->realNumber - cell[i][j - 1]->realNumber;
-                code[i] = code[i].append(QString("%1").arg((char)(abs(delta) + 96)));
-
-
-            }
-            if(delta > 0)
-            {
-                //qDebug() << pow(2, 8 - j);
-                binaryBuffer += pow(2, 8 - j);
-
-            }
-
-
-
-
-            if(cell[i][j]->assignedNumber)
-            {
-                binaryBuffer2 += pow(2, 8 - j);
+                line.replace(QString("\n"), QString(""));
+                if(tracker % 3 == 0)
+                {
+                    code[tracker / 3] = line;
+                }
+                else if(tracker % 3 == 1)
+                {
+                    key[tracker / 3] = line;
+                }
+                else if(tracker % 3 == 2)
+                {
+                    hint[tracker / 3] = line;
+                }
+                tracker++;
             }
 
         }
-        key[i].setNum(binaryBuffer, 16);
-        hint[i].setNum(binaryBuffer2, 16);
 
-        qDebug() << code[i];
-        qDebug() << key[i];
-        qDebug() << hint[i];
-
-        delta = 0;
-        binaryBuffer = 0;
-        binaryBuffer2 = 0;
-        crypt = crypt.append("\n");
-    }
-    qDebug() << crypt;
     crypt = "";
 
     for (int i = 0; i < 9; i++)
@@ -503,17 +497,152 @@ void Sudoku::on_printButton_clicked()
 
             if(!j)
             {
-                testing[i][j] = deltaInverse;
+                cell[i][j]->realNumber = deltaInverse;
             }
             else
             {
-                testing[i][j] = testing[i][j - 1] + deltaInverse;
+                cell[i][j]->realNumber = cell[i][j - 1]->realNumber + deltaInverse;
             }
 
-            crypt = crypt.append(QString("%1").arg(testing[i][j]));
+            //crypt = crypt.append(QString("%1").arg(testing[i][j]));
         }
-        crypt = crypt.append("\n");
+        //crypt = crypt.append("\n");
         decimal = 0;
     }
-    qDebug() << crypt;
+    invalidateWindow();
+    validateWindow();
+
+    for (int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            if (hint[i].mid(j, 1).toInt())
+            {
+                cell[8 - i][8 - j]->setText(hint[i].mid(j, 1));
+            }
+            else
+            {
+                cell[8 -i][8 - j]->setText("");
+            }
+            cell[8 -i][8 - j]->assignedNumber = hint[i].mid(j, 1).toInt();
+        }
+    }
+}
+
+
+void Sudoku::on_actionSave_triggered()
+{
+    QString code[9];
+    QString key[9];
+    QString hint[9];
+    int binaryBuffer = 0;
+
+    crypt = "";
+    int delta = 0;
+
+    if (!sudokuBlankChecker())
+    {
+        return;
+    }
+    for (int i = 0; i < 9; i++)
+    {
+        for (int j = 0; j < 9; j++)
+        {
+
+            if(!j)
+            {
+                delta = cell[i][j]->realNumber;
+                code[i] = code[i].append(QString("%1").arg((char)(delta + 96)));
+
+            }
+            else
+            {
+                delta = cell[i][j]->realNumber - cell[i][j - 1]->realNumber;
+                code[i] = code[i].append(QString("%1").arg((char)(abs(delta) + 96)));
+
+
+            }
+            if(delta > 0)
+            {
+                //qDebug() << pow(2, 8 - j);
+                binaryBuffer += pow(2, 8 - j);
+
+            }
+
+            hint[i] = hint[i].append(QString("%1").arg(cell[8 - i][8 - j]->assignedNumber));
+
+
+            /*if(cell[i][j]->assignedNumber)
+            {
+                binaryBuffer2 += pow(2, 8 - j);
+            }*/
+
+        }
+        key[i].setNum(binaryBuffer, 16);
+        //hint[i].setNum(binaryBuffer2, 16);
+
+        delta = 0;
+        binaryBuffer = 0;
+        //binaryBuffer2 = 0;
+        crypt = crypt.append(QString("%1\n").arg(code[i]));
+        crypt = crypt.append(QString("%1\n").arg(key[i]));
+        crypt = crypt.append(QString("%1\n").arg(hint[i]));
+    }
+
+    QFile outFile("/Users/Jake/Desktop/savedGame.txt");
+    outFile.open(QIODevice::Text | QIODevice::WriteOnly);
+    QTextStream out(&outFile);
+
+    out << crypt;
+    outFile.flush();
+    outFile.close();
+
+    crypt.clear();
+}
+
+
+void Sudoku::validateWindow()
+{
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            cell[i][j]->setEnabled(true);
+
+        }
+    }
+}
+
+
+void Sudoku::invalidateWindow()
+{
+    coorX = -1;
+    coorY = -1;
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            cell[i][j]->setEnabled(false);
+
+            if(cell[i][j]->color == 0)
+            {
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: white; }");
+            }
+            else
+            {
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: red; }");
+            }
+        }
+        number[i]->setEnabled(false);
+    }
+    ui->nullButton->setEnabled(false);
+    ui->radioButton->setChecked(false);
+    isCellSelected = false;
+}
+
+
+void Sudoku::on_actionClose_triggered()
+{
+    sudokuErrorWiper();
+    invalidateWindow();
 }

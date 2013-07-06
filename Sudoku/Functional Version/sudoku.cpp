@@ -287,7 +287,75 @@ void Sudoku::number_clicked()
             clock->stopTimer();
         }
     }
+    else if (ui->clueButton->isChecked())
+    {
+        invalidateWindow();
+        validateWindow();
+        QPushButton *numberButton = (QPushButton *)sender();
+        for (int k = 0; k < 9; k++)
+        {
+            for (int l = 0; l < 9; l++)
+            {
+                cell[k][l]->setStyleSheet("background-color: yellow");
+            }
 
+        }
+        for (int k = 0; k < 9; k++)
+        {
+            for (int l = 0; l < 9; l++)
+            {
+                if(cell[k][l]->assignedNumber)
+                {
+                    if(cell[k][l]->assignedNumber == numberButton->text().toInt())
+                    {
+                        int centerX = k / 3;
+                        int centerY = l / 3;
+
+                        for (int i = 0; i < 9; i++)
+                        {
+                            for (int j = 0; j < 9; j++)
+                            {
+
+                                if  ((i == k || j == l || (i / 3 == centerX && j / 3 == centerY)))
+                                {
+
+                                        if (!cell[i][j]->assignedNumber)
+                                        {
+                                            if(cell[i][j]->color == 0)
+                                            {
+                                                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: darkBlue; }");
+                                            }
+                                            else
+                                            {
+                                                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: magenta; }");
+                                            }
+                                        }
+                                    }
+
+                            }
+
+                        }
+                    }
+                    if(cell[k][l]->color == 0)
+                    {
+                        cell[k][l]->setStyleSheet("QPushButtonGrid { background-color: darkBlue; }");
+                    }
+                    else
+                    {
+                        cell[k][l]->setStyleSheet("QPushButtonGrid { background-color: magenta; }");
+                    }
+                }
+
+
+
+            }
+
+        }
+        for (int i = 0; i < 9; i++)
+        {
+            number[i]->setEnabled(true);
+        }
+    }
 }
 
 
@@ -712,6 +780,13 @@ bool Sudoku::isSudokuComplete()
 
 void Sudoku::on_normalButton_clicked()
 {
+    invalidateWindow();
+    validateWindow();
+    for (int i = 0; i < 9; i++)
+    {
+        number[i]->setEnabled(true);
+    }
+    ui->gridLayout->setEnabled(true);
     if (isCellSelected){
         for (int i = 0; i < 9; i++)
         {
@@ -723,7 +798,24 @@ void Sudoku::on_normalButton_clicked()
 
 void Sudoku::on_hintButton_clicked()
 {
+    invalidateWindow();
+    validateWindow();
+    for (int i = 0; i < 9; i++)
+    {
+        number[i]->setEnabled(true);
+    }
+    ui->gridLayout->setEnabled(true);
     if (isCellSelected){
         validateCell();
+    }
+}
+
+void Sudoku::on_clueButton_clicked()
+{
+    invalidateWindow();
+    ui->groupBox_2->setEnabled(true);
+    for (int i = 0; i < 9; i++)
+    {
+        number[i]->setEnabled(true);
     }
 }

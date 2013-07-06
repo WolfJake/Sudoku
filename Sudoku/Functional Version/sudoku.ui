@@ -45,7 +45,7 @@
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>560</y>
+      <y>600</y>
       <width>114</width>
       <height>32</height>
      </rect>
@@ -111,7 +111,7 @@
       <x>670</x>
       <y>420</y>
       <width>120</width>
-      <height>111</height>
+      <height>161</height>
      </rect>
     </property>
     <property name="title">
@@ -144,6 +144,19 @@
      </property>
      <property name="checked">
       <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="clueButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>102</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Clue</string>
      </property>
     </widget>
    </widget>

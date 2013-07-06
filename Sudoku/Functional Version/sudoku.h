@@ -61,6 +61,8 @@ private slots:
 
     void on_hintButton_clicked();
 
+    void on_clueButton_clicked();
+
 private:
 
     Ui::Sudoku *ui;

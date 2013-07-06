@@ -10,6 +10,7 @@ class Sudoku;
 class QGridLayout;
 class QPushButton;
 class QPushButtonGrid;
+class Clock;
 
 class Sudoku : public QMainWindow
 {
@@ -20,7 +21,7 @@ public:
     ~Sudoku();
 
 private slots:
-    void on_actionQuit_triggered();
+    void initGui();
 
     void number_clicked();
 
@@ -52,13 +53,22 @@ private slots:
 
     void on_actionClose_triggered();
 
+    void on_pushButton_clicked();
+
+    bool isSudokuComplete();
+
+    void on_normalButton_clicked();
+
+    void on_hintButton_clicked();
+
 private:
-    void initGui();
+
     Ui::Sudoku *ui;
 
     QPushButtonGrid *cell[9][9];
     QPushButton *number[9];
     QString crypt;
+    Clock *clock;
 
     int coorX;
     int coorY;

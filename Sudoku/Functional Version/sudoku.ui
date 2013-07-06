@@ -6,45 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1094</width>
-    <height>725</height>
+    <width>886</width>
+    <height>694</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Sudoku</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="nullButton">
-    <property name="geometry">
-     <rect>
-      <x>800</x>
-      <y>300</y>
-      <width>114</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QWidget" name="gridLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>780</x>
-      <y>120</y>
-      <width>160</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="numberPad"/>
-   </widget>
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>50</y>
-      <width>571</width>
-      <height>521</height>
+      <x>80</x>
+      <y>60</y>
+      <width>511</width>
+      <height>481</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout"/>
@@ -55,8 +31,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>360</y>
+      <x>760</x>
+      <y>370</y>
       <width>21</width>
       <height>20</height>
      </rect>
@@ -65,13 +41,119 @@
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>560</y>
+      <width>114</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>550</y>
+      <width>511</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout"/>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>20</y>
+      <width>221</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Number Pad</string>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>40</y>
+       <width>160</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="numberPad"/>
+    </widget>
+    <widget class="QPushButton" name="nullButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>210</y>
+       <width>114</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>420</y>
+      <width>120</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Game Mode</string>
+    </property>
+    <widget class="QRadioButton" name="hintButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>102</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Hint</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="normalButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>102</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Normal</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1094</width>
+     <width>886</width>
      <height>22</height>
     </rect>
    </property>

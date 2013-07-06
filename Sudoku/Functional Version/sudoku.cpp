@@ -9,6 +9,8 @@
 #include <QtGlobal>
 #include <math.h>
 #include <QFile>
+#include <QDialog>
+#include <clock.h>
 
 Sudoku::Sudoku(QWidget *parent) :
     QMainWindow(parent),
@@ -35,6 +37,7 @@ Sudoku::~Sudoku()
         delete number[i];
 
     }
+    delete clock;
 }
 
 void Sudoku::initGui()
@@ -42,6 +45,16 @@ void Sudoku::initGui()
     coorX = -1;
     coorY = -1;
     bool paintFlag = false;
+
+    //ui->gridLayout->setStyleSheet("background-color: white;");
+
+    this->setStyleSheet("background-color: white;");
+
+
+    /*//QImage image(":/images/sketchBackground.jpg");
+
+    setStyleSheet("background-image: url(/Users/Jake/Desktop/images/sketchBackground.jpg);");*/
+
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
@@ -55,12 +68,13 @@ void Sudoku::initGui()
             if(paintFlag)
             {
                 cell[i][j]->color = 0;
-                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: white; }");
+
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: darkBlue; }");
             }
             else
             {
                 cell[i][j]->color = 1;
-                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: red; }");
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: magenta; }");
             }
 
             connect(cell[i][j], &QPushButtonGrid::clicked, this, &Sudoku::cell_clicked);
@@ -81,14 +95,21 @@ void Sudoku::initGui()
         number[i] = new QPushButton(QString("%1").arg(i + 1));
         connect(number[i], &QPushButton::clicked, this, &Sudoku::number_clicked);
         ui->numberPad->addWidget(number[i], i / 3, i % 3);
-
+        number[i]->setStyleSheet("QPushButton { background-color: darkCyan; }");
     }
 
     ui->nullButton->setText("Erase");
     ui->nullButton->setEnabled(false);
+    ui->nullButton->setStyleSheet("QPushButton { background-color: darkCyan; }");
     isCellSelected = false;
 
     invalidateWindow();
+
+
+    clock = new Clock();
+    ui->verticalLayout->addWidget(clock);
+    clock->setHidden(true);
+
 }
 
 
@@ -137,6 +158,8 @@ void Sudoku::sudokuGenerator(int row)
             }
         }
     }
+
+
 
     sudokuGenerator(row + 1);
 }
@@ -234,17 +257,12 @@ void Sudoku::sudokuErrorWiper()
 }
 
 
-void Sudoku::on_actionQuit_triggered()
-{
-   qApp->quit();
-}
-
 
 void Sudoku::number_clicked()
 {
     if (isCellSelected) {
         QPushButton *numberButton = (QPushButton *)sender();
-        number[cell[coorX][coorY]->assignedNumber - 1]->setEnabled(1);
+        number[cell[coorX][coorY]->assignedNumber - 1]->setEnabled(true);
         cell[coorX][coorY]->setText(numberButton->text());
         cell[coorX][coorY]->assignedNumber = numberButton->text().toInt();
 
@@ -256,9 +274,18 @@ void Sudoku::number_clicked()
         {
             ui->radioButton->setChecked(false);
         }
-        number[cell[coorX][coorY]->assignedNumber - 1]->setEnabled(false);
-        ui->nullButton->setEnabled(1);
+        if(ui->hintButton->isChecked())
+        {
+            number[cell[coorX][coorY]->assignedNumber - 1]->setEnabled(false);
+        }
 
+        ui->nullButton->setEnabled(true);
+
+        if(isSudokuComplete())
+        {
+            invalidateWindow();
+            clock->stopTimer();
+        }
     }
 
 }
@@ -274,11 +301,11 @@ void Sudoku::cell_clicked()
     {
         if(cell[coorX][coorY]->color == 0)
         {
-            cell[coorX][coorY]->setStyleSheet("QPushButtonGrid { background-color: white; }");
+            cell[coorX][coorY]->setStyleSheet("QPushButtonGrid { background-color: darkBlue; }");
         }
         else
         {
-            cell[coorX][coorY]->setStyleSheet("QPushButtonGrid { background-color: red; }");
+            cell[coorX][coorY]->setStyleSheet("QPushButtonGrid { background-color: magenta; }");
         }
     }
     QPushButtonGrid *cell = (QPushButtonGrid *)sender();
@@ -294,8 +321,18 @@ void Sudoku::cell_clicked()
         ui->radioButton->setChecked(false);
     }
 
-    validateCell();
-    cell->setStyleSheet("QPushButtonGrid { background-color: blue; }");
+    for (int i = 0; i < 9; i++)
+    {
+        number[i]->setEnabled(true);
+    }
+
+    if(ui->hintButton->isChecked())
+    {
+        validateCell();
+    }
+
+
+    cell->setStyleSheet("QPushButtonGrid { background-color: darkRed; }");
 }
 
 
@@ -318,10 +355,6 @@ void Sudoku::validateCell()
     int centerX = coorX / 3;
     int centerY = coorY / 3;
 
-    for (int i = 0; i < 9; i++)
-    {
-        number[i]->setEnabled(true);
-    }
     for (int i = 0; i < 9; i++)
     {
         for (int j = 0; j < 9; j++)
@@ -360,6 +393,8 @@ void Sudoku::on_actionNew_triggered()
     }
     invalidateWindow();
     validateWindow();
+    clock->startTimer();
+    clock->setHidden(false);
 }
 
 
@@ -527,6 +562,7 @@ void Sudoku::on_actionOpen_triggered()
             cell[8 -i][8 - j]->assignedNumber = hint[i].mid(j, 1).toInt();
         }
     }
+    clock->setHidden(true);
 }
 
 
@@ -611,6 +647,8 @@ void Sudoku::validateWindow()
 
         }
     }
+
+    ui->groupBox_2->setEnabled(true);
 }
 
 
@@ -626,11 +664,11 @@ void Sudoku::invalidateWindow()
 
             if(cell[i][j]->color == 0)
             {
-                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: white; }");
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: darkBlue; }");
             }
             else
             {
-                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: red; }");
+                cell[i][j]->setStyleSheet("QPushButtonGrid { background-color: magenta; }");
             }
         }
         number[i]->setEnabled(false);
@@ -638,6 +676,9 @@ void Sudoku::invalidateWindow()
     ui->nullButton->setEnabled(false);
     ui->radioButton->setChecked(false);
     isCellSelected = false;
+
+    ui->groupBox_2->setEnabled(false);
+
 }
 
 
@@ -645,4 +686,44 @@ void Sudoku::on_actionClose_triggered()
 {
     sudokuErrorWiper();
     invalidateWindow();
+    clock->setHidden(true);
+}
+
+void Sudoku::on_pushButton_clicked()
+{
+    QDialog saveName;
+    saveName.exec();
+}
+
+bool Sudoku::isSudokuComplete()
+{
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            if (cell[i][j]->realNumber != cell[i][j]->assignedNumber)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+void Sudoku::on_normalButton_clicked()
+{
+    if (isCellSelected){
+        for (int i = 0; i < 9; i++)
+        {
+            number[i]->setEnabled(true);
+        }
+    }
+
+}
+
+void Sudoku::on_hintButton_clicked()
+{
+    if (isCellSelected){
+        validateCell();
+    }
 }

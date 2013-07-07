@@ -28,6 +28,7 @@ void Clock::showTime()
 {
     QTime time = QTime::currentTime();
     time = time.addSecs(-initialTime.hour() * 3600 - initialTime.minute() * 60 - initialTime.second());
+    time = time.addSecs(timeAdded);
     QString text = time.toString("hh:mm:ss");
 
     display(text);

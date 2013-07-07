@@ -17,11 +17,13 @@ class Clock : public QLCDNumber
 public:
     explicit Clock(QWidget *parent = 0);
     ~Clock();
+    int timeAdded;
     
 private:
     Ui::Clock *ui;
     QTime initialTime;
     QTimer *timer;
+
 
 public slots:
     void startTimer();

@@ -46,14 +46,7 @@ void Sudoku::initGui()
     coorY = -1;
     bool paintFlag = false;
 
-    //ui->gridLayout->setStyleSheet("background-color: white;");
-
     this->setStyleSheet("background-color: white;");
-
-
-    /*//QImage image(":/images/sketchBackground.jpg");
-
-    setStyleSheet("background-image: url(/Users/Jake/Desktop/images/sketchBackground.jpg);");*/
 
     for (int i = 0; i < 9; i++)
     {
@@ -181,11 +174,8 @@ bool Sudoku::numberAssigner(int counter, int row, int column, int value)
             }
             else
             {
-
                 cell[row][column]->realNumber = cell[row][column - counter]->realNumber;
-                //cell[row][column]->setText(QString("%1").arg(cell[row][column - counter]->realNumber));
                 cell[row][column - counter]->realNumber = value;
-                //cell[row][column - counter]->setText(QString("%1").arg(value));
 
             }
             return true;
@@ -284,6 +274,7 @@ void Sudoku::number_clicked()
         if(isSudokuComplete())
         {
             invalidateWindow();
+            //int timer = clock->getTimeScore(); //////////
             clock->stopTimer();
         }
     }
@@ -461,6 +452,7 @@ void Sudoku::on_actionNew_triggered()
     }
     invalidateWindow();
     validateWindow();
+    clock->timeAdded = 0;
     clock->startTimer();
     clock->setHidden(false);
 }
@@ -473,6 +465,7 @@ void Sudoku::on_actionOpen_triggered()
     QString hint[9];
 
     crypt = "";
+    int timeAdded;
     int decimal = 0;
     int digit = 0;
     QString sign;
@@ -491,7 +484,12 @@ void Sudoku::on_actionOpen_triggered()
             if (line.length())
             {
                 line.replace(QString("\n"), QString(""));
-                if(tracker % 3 == 0)
+
+                if(tracker == 27)
+                {
+                    timeAdded = line.toInt();
+                }
+                else if(tracker % 3 == 0)
                 {
                     code[tracker / 3] = line;
                 }
@@ -606,10 +604,7 @@ void Sudoku::on_actionOpen_triggered()
             {
                 cell[i][j]->realNumber = cell[i][j - 1]->realNumber + deltaInverse;
             }
-
-            //crypt = crypt.append(QString("%1").arg(testing[i][j]));
         }
-        //crypt = crypt.append("\n");
         decimal = 0;
     }
     invalidateWindow();
@@ -630,7 +625,9 @@ void Sudoku::on_actionOpen_triggered()
             cell[8 -i][8 - j]->assignedNumber = hint[i].mid(j, 1).toInt();
         }
     }
-    clock->setHidden(true);
+    clock->timeAdded = timeAdded;
+    clock->startTimer();
+    clock->setHidden(false);
 }
 
 
@@ -668,30 +665,23 @@ void Sudoku::on_actionSave_triggered()
             }
             if(delta > 0)
             {
-                //qDebug() << pow(2, 8 - j);
                 binaryBuffer += pow(2, 8 - j);
 
             }
 
             hint[i] = hint[i].append(QString("%1").arg(cell[8 - i][8 - j]->assignedNumber));
 
-
-            /*if(cell[i][j]->assignedNumber)
-            {
-                binaryBuffer2 += pow(2, 8 - j);
-            }*/
-
         }
         key[i].setNum(binaryBuffer, 16);
-        //hint[i].setNum(binaryBuffer2, 16);
 
         delta = 0;
         binaryBuffer = 0;
-        //binaryBuffer2 = 0;
         crypt = crypt.append(QString("%1\n").arg(code[i]));
         crypt = crypt.append(QString("%1\n").arg(key[i]));
         crypt = crypt.append(QString("%1\n").arg(hint[i]));
     }
+
+    crypt = crypt.append(QString("%1\n").arg(clock->getTimeScore() + clock->timeAdded));
 
     QFile outFile("/Users/Jake/Desktop/savedGame.txt");
     outFile.open(QIODevice::Text | QIODevice::WriteOnly);

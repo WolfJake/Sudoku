@@ -12,3 +12,9 @@ Start::~Start()
 {
     delete ui;
 }
+
+
+void start::Boton_clicked()
+{
+    
+}

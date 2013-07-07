@@ -1,22 +1,10 @@
 #ifndef START_H
 #define START_H
 
-#include <QWidget>
-
-namespace Ui {
-class Start;
-}
-
-class Start : public QWidget
+class start
 {
-    Q_OBJECT
-    
 public:
-    explicit Start(QWidget *parent = 0);
-    ~Start();
-    
-private:
-    Ui::Start *ui;
+    start();
 };
 
 #endif // START_H

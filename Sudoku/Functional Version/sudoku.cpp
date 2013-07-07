@@ -16,6 +16,7 @@ Sudoku::Sudoku(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Sudoku)
 {
+
     srand((unsigned)time(NULL));
     ui->setupUi(this);
     initGui();

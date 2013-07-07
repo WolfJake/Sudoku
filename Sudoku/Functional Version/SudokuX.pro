@@ -15,6 +15,7 @@ TEMPLATE = app
 SOURCES += main.cpp\
         sudoku.cpp \
     qpushbuttongrid.cpp \
+<<<<<<< HEAD
     clock.cpp
 
 HEADERS  += sudoku.h \
@@ -29,3 +30,17 @@ OTHER_FILES +=
 
 RESOURCES += \
     BackgroundImages.qrc
+=======
+    start.cpp
+
+HEADERS  += sudoku.h \
+    qpushbuttongrid.h \
+    start.h
+
+FORMS    += sudoku.ui \
+    qpushbuttongrid.ui \
+    start.ui
+
+RESOURCES += \
+    Recursos.qrc
+>>>>>>> Ventana Acomodada

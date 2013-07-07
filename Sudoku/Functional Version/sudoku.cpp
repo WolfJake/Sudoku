@@ -1,5 +1,6 @@
 #include "sudoku.h"
 #include "ui_sudoku.h"
+#include "ui_start.h"
 #include <QApplication>
 #include <QPushButton>
 #include <qpushbuttongrid.h>

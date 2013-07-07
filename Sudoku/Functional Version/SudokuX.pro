@@ -14,10 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         sudoku.cpp \
-    qpushbuttongrid.cpp
+    qpushbuttongrid.cpp \
+    start.cpp
 
 HEADERS  += sudoku.h \
-    qpushbuttongrid.h
+    qpushbuttongrid.h \
+    start.h
 
 FORMS    += sudoku.ui \
-    qpushbuttongrid.ui
+    qpushbuttongrid.ui \
+    start.ui
+
+RESOURCES += \
+    Recursos.qrc

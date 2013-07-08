@@ -23,14 +23,6 @@ public:
 private slots:
     void initGui();
 
-    void number_clicked();
-
-    void cell_clicked();
-
-    void on_nullButton_clicked();
-
-    void validateCell();
-
     bool validateCellAtPointWithNumber(int row, int column, int value, int counter);
 
     bool numberAssigner(int counter, int row, int column, int value);
@@ -41,27 +33,39 @@ private slots:
 
     void sudokuErrorWiper();
 
+    bool isSudokuComplete();
+
+    void number_clicked();
+
+    void cell_clicked();
+
+    void on_nullButton_clicked();
+
+    void validateCell();
+
     void on_actionNew_triggered();
 
     void on_actionOpen_triggered();
 
     void on_actionSave_triggered();
 
+    void on_actionClose_triggered();
+
+    void on_actionQuit_triggered();
+
     void validateWindow();
 
     void invalidateWindow();
 
-    void on_actionClose_triggered();
-
     void on_pushButton_clicked();
-
-    bool isSudokuComplete();
 
     void on_normalButton_clicked();
 
     void on_hintButton_clicked();
 
     void on_clueButton_clicked();
+
+
 
 private:
 

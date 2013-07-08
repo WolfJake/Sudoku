@@ -20,6 +20,7 @@ public:
     int realNumber;
     int assignedNumber;
     int color;
+    bool isConstant;
 
 private:
     Ui::QPushButtonGrid *ui;

@@ -29,7 +29,6 @@ Sudoku::~Sudoku()
         for(int j = 0; j < 9; j++)
         {
             delete cell[i][j];
-
         }
     }
     for (int i = 0; i < 9; i++)
@@ -52,12 +51,12 @@ void Sudoku::initGui()
     {
         for (int j = 0; j < 9; j++)
         {
-            //cell[i][j] = new QPushButton(QString("(%1, %2)").arg(i + 1).arg(j + 1));
             cell[i][j] = new QPushButtonGrid();
             cell[i][j]->row = i;
             cell[i][j]->column = j;
             cell[i][j]->realNumber = 0;
             cell[i][j]->assignedNumber = 0;
+            cell[i][j]->isConstant = false;
             if(paintFlag)
             {
                 cell[i][j]->color = 0;
@@ -281,7 +280,8 @@ void Sudoku::number_clicked()
     else if (ui->clueButton->isChecked())
     {
         invalidateWindow();
-        validateWindow();
+        //validateWindow();
+        ui->groupBox_2->setEnabled(true);
         QPushButton *numberButton = (QPushButton *)sender();
         for (int k = 0; k < 9; k++)
         {
@@ -450,6 +450,46 @@ void Sudoku::on_actionNew_triggered()
         sudokuErrorWiper();
         sudokuGenerator(0);
     }
+
+    int counter;
+    int row;
+    int column;
+    for(int k = 0; k < 30; k++)
+    {
+        row = rand() % 9;
+        column = rand() % 9;
+
+        counter = 0;
+
+        for (int i = 0; i < 9; i++)
+        {
+            for (int j = 0; j < 9; j++)
+            {
+
+                if  (i == row || j == column || (i / 3 == row / 3 && j / 3 == column / 3))
+                {
+                    if (cell[i][j]->isConstant)
+                    {
+                        counter ++;
+                    }
+                }
+
+            }
+
+        }
+        if (counter < 5)
+        {
+            cell[row][column]->isConstant = true;
+            cell[row][column]->setEnabled(false);
+            cell[row][column]->setText(QString("%1").arg(cell[row][column]->realNumber));
+            cell[row][column]->assignedNumber = cell[row][column]->realNumber;
+        }
+        else
+        {
+            k--;
+        }
+
+    }
     invalidateWindow();
     validateWindow();
     clock->timeAdded = 0;
@@ -488,6 +528,10 @@ void Sudoku::on_actionOpen_triggered()
                 if(tracker == 27)
                 {
                     timeAdded = line.toInt();
+                }
+                else if(tracker > 27)
+                {
+                    cell[line.toInt() / 10][line.toInt() % 10]->isConstant = true;
                 }
                 else if(tracker % 3 == 0)
                 {
@@ -682,6 +726,17 @@ void Sudoku::on_actionSave_triggered()
     }
 
     crypt = crypt.append(QString("%1\n").arg(clock->getTimeScore() + clock->timeAdded));
+    for(int i = 0; i < 9; i++)
+    {
+        for(int j = 0; j < 9; j++)
+        {
+            if(cell[i][j]->isConstant)
+            {
+                crypt = crypt.append(QString("%1%2\n").arg(i).arg(j));
+            }
+
+        }
+    }
 
     QFile outFile("/Users/Jake/Desktop/savedGame.txt");
     outFile.open(QIODevice::Text | QIODevice::WriteOnly);
@@ -701,12 +756,15 @@ void Sudoku::validateWindow()
     {
         for(int j = 0; j < 9; j++)
         {
-            cell[i][j]->setEnabled(true);
-
+            if (!cell[i][j]->isConstant)
+            {
+                cell[i][j]->setEnabled(true);
+            }
         }
     }
 
     ui->groupBox_2->setEnabled(true);
+    //ui->normalButton->setChecked(true);
 }
 
 
@@ -808,4 +866,9 @@ void Sudoku::on_clueButton_clicked()
     {
         number[i]->setEnabled(true);
     }
+}
+
+void Sudoku::on_actionQuit_triggered()
+{
+    qApp->quit();
 }

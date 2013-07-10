@@ -1,0 +1,115 @@
+\section{Referencia de la Clase Q\-Push\-Button\-Grid}
+\label{class_q_push_button_grid}\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}}
+
+
+{\ttfamily \#include $<$qpushbuttongrid.\-h$>$}
+
+
+
+Diagrama de herencias de Q\-Push\-Button\-Grid
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_q_push_button_grid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para Q\-Push\-Button\-Grid\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_q_push_button_grid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Q\-Push\-Button\-Grid} (Q\-Push\-Button $\ast$parent=0)
+\item 
+{\bf $\sim$\-Q\-Push\-Button\-Grid} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf row}
+\item 
+int {\bf column}
+\item 
+int {\bf real\-Number}
+\item 
+int {\bf assigned\-Number}
+\item 
+int {\bf color}
+\item 
+bool {\bf is\-Constant}
+\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::\-Q\-Push\-Button\-Grid $\ast$ {\bf ui}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{Q\-Push\-Button\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Push\-Button\-Grid\-::\-Q\-Push\-Button\-Grid (
+\begin{DoxyParamCaption}
+\item[{Q\-Push\-Button $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_push_button_grid_a44014c8f870815c07dd1ffa8def17f40}
+
+\begin{DoxyCode}
+4                                                     :
+5     QPushButton(parent),
+6     ui(\textcolor{keyword}{new} Ui::QPushButtonGrid)
+7 \{
+8     ui->setupUi(\textcolor{keyword}{this});
+9 \}
+\end{DoxyCode}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!$\sim$\-Q\-Push\-Button\-Grid@{$\sim$\-Q\-Push\-Button\-Grid}}
+\index{$\sim$\-Q\-Push\-Button\-Grid@{$\sim$\-Q\-Push\-Button\-Grid}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{$\sim$\-Q\-Push\-Button\-Grid}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Push\-Button\-Grid\-::$\sim$\-Q\-Push\-Button\-Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_push_button_grid_a34d347faea34c64fe1dd3018254dea86}
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keyword}{delete} ui;
+14 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!assigned\-Number@{assigned\-Number}}
+\index{assigned\-Number@{assigned\-Number}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{assigned\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-Push\-Button\-Grid\-::assigned\-Number}\label{class_q_push_button_grid_a17927930ad86813a22795fd246de1c7c}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!color@{color}}
+\index{color@{color}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{color}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-Push\-Button\-Grid\-::color}\label{class_q_push_button_grid_ab8ed3340d216292a440b865dd8784bc8}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!column@{column}}
+\index{column@{column}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{column}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-Push\-Button\-Grid\-::column}\label{class_q_push_button_grid_a48a98134fc3fd27f119310ba06702e99}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!is\-Constant@{is\-Constant}}
+\index{is\-Constant@{is\-Constant}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{is\-Constant}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\-Push\-Button\-Grid\-::is\-Constant}\label{class_q_push_button_grid_aec9a55983edc0ecea663a4445b1fa0cb}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!real\-Number@{real\-Number}}
+\index{real\-Number@{real\-Number}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{real\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-Push\-Button\-Grid\-::real\-Number}\label{class_q_push_button_grid_a659917a93c5ea84f8d6815a2380b687e}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!row@{row}}
+\index{row@{row}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{row}]{\setlength{\rightskip}{0pt plus 5cm}int Q\-Push\-Button\-Grid\-::row}\label{class_q_push_button_grid_ad30c980cad65086f41840f69b5fb1e57}
+\index{Q\-Push\-Button\-Grid@{Q\-Push\-Button\-Grid}!ui@{ui}}
+\index{ui@{ui}!QPushButtonGrid@{Q\-Push\-Button\-Grid}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::\-Q\-Push\-Button\-Grid$\ast$ Q\-Push\-Button\-Grid\-::ui\hspace{0.3cm}{\ttfamily [private]}}\label{class_q_push_button_grid_a73f52fa22fa7c71fa8401ad3890a9b86}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/{\bf qpushbuttongrid.\-h}\item 
+I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/{\bf qpushbuttongrid.\-cpp}\end{DoxyCompactItemize}

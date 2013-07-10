@@ -1,0 +1,221 @@
+\begin{theindex}
+
+  \item {$\sim$\-Clock}
+    \subitem {Clock}, 2
+  \item {$\sim$\-Q\-Push\-Button\-Grid}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+  \item {$\sim$\-Sudoku}
+    \subitem {Sudoku}, 7
+
+  \indexspace
+
+  \item {assigned\-Number}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+
+  \indexspace
+
+  \item {cell}
+    \subitem {Sudoku}, 21
+  \item {cell\-\_\-clicked}
+    \subitem {Sudoku}, 7
+  \item {Clock}, 1
+    \subitem {$\sim$\-Clock}, 2
+    \subitem {Clock}, 2
+    \subitem {get\-Time\-Score}, 2
+    \subitem {init\-Gui}, 2
+    \subitem {initial\-Time}, 3
+    \subitem {show\-Time}, 3
+    \subitem {start\-Timer}, 3
+    \subitem {stop\-Timer}, 3
+    \subitem {time\-Added}, 3
+    \subitem {timer}, 3
+    \subitem {ui}, 3
+  \item {clock}
+    \subitem {Sudoku}, 21
+  \item {color}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+  \item {column}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+  \item {coor\-X}
+    \subitem {Sudoku}, 21
+  \item {coor\-Y}
+    \subitem {Sudoku}, 21
+  \item {crypt}
+    \subitem {Sudoku}, 21
+
+  \indexspace
+
+  \item {get\-Time\-Score}
+    \subitem {Clock}, 2
+
+  \indexspace
+
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/clock.\-cpp}, 
+		23
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/clock.\-h}, 
+		23
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/main.\-cpp}, 
+		24
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/qpushbuttongrid.\-cpp}, 
+		25
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/qpushbuttongrid.\-h}, 
+		26
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/sudoku.\-cpp}, 
+		27
+  \item {I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/sudoku.\-h}, 
+		28
+  \item {init\-Gui}
+    \subitem {Clock}, 2
+    \subitem {Sudoku}, 8
+  \item {initial\-Time}
+    \subitem {Clock}, 3
+  \item {invalidate\-Window}
+    \subitem {Sudoku}, 9
+  \item {is\-Cell\-Selected}
+    \subitem {Sudoku}, 21
+  \item {is\-Constant}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+  \item {is\-Sudoku\-Complete}
+    \subitem {Sudoku}, 9
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\-cpp}, 25
+  \item {main.\-cpp}
+    \subitem {main}, 25
+
+  \indexspace
+
+  \item {number}
+    \subitem {Sudoku}, 21
+  \item {number\-\_\-clicked}
+    \subitem {Sudoku}, 9
+  \item {number\-Assigner}
+    \subitem {Sudoku}, 11
+
+  \indexspace
+
+  \item {on\-\_\-action\-Close\-\_\-triggered}
+    \subitem {Sudoku}, 11
+  \item {on\-\_\-action\-Easy\-\_\-triggered}
+    \subitem {Sudoku}, 11
+  \item {on\-\_\-action\-Hard\-\_\-triggered}
+    \subitem {Sudoku}, 12
+  \item {on\-\_\-action\-Medium\-\_\-triggered}
+    \subitem {Sudoku}, 13
+  \item {on\-\_\-action\-New\-\_\-triggered}
+    \subitem {Sudoku}, 14
+  \item {on\-\_\-action\-Open\-\_\-triggered}
+    \subitem {Sudoku}, 14
+  \item {on\-\_\-action\-Quit\-\_\-triggered}
+    \subitem {Sudoku}, 17
+  \item {on\-\_\-action\-Save\-\_\-triggered}
+    \subitem {Sudoku}, 17
+  \item {on\-\_\-clue\-Button\-\_\-clicked}
+    \subitem {Sudoku}, 18
+  \item {on\-\_\-hint\-Button\-\_\-clicked}
+    \subitem {Sudoku}, 18
+  \item {on\-\_\-normal\-Button\-\_\-clicked}
+    \subitem {Sudoku}, 18
+  \item {on\-\_\-null\-Button\-\_\-clicked}
+    \subitem {Sudoku}, 18
+  \item {on\-\_\-push\-Button\-\_\-clicked}
+    \subitem {Sudoku}, 19
+
+  \indexspace
+
+  \item {Q\-Push\-Button\-Grid}, 3
+    \subitem {$\sim$\-Q\-Push\-Button\-Grid}, 5
+    \subitem {assigned\-Number}, 5
+    \subitem {color}, 5
+    \subitem {column}, 5
+    \subitem {is\-Constant}, 5
+    \subitem {Q\-Push\-Button\-Grid}, 5
+    \subitem {Q\-Push\-Button\-Grid}, 5
+    \subitem {real\-Number}, 5
+    \subitem {row}, 5
+    \subitem {ui}, 5
+
+  \indexspace
+
+  \item {real\-Number}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+  \item {row}
+    \subitem {Q\-Push\-Button\-Grid}, 5
+
+  \indexspace
+
+  \item {show\-Time}
+    \subitem {Clock}, 3
+  \item {start\-Timer}
+    \subitem {Clock}, 3
+  \item {stop\-Timer}
+    \subitem {Clock}, 3
+  \item {Sudoku}, 5
+    \subitem {$\sim$\-Sudoku}, 7
+    \subitem {cell}, 21
+    \subitem {cell\-\_\-clicked}, 7
+    \subitem {clock}, 21
+    \subitem {coor\-X}, 21
+    \subitem {coor\-Y}, 21
+    \subitem {crypt}, 21
+    \subitem {init\-Gui}, 8
+    \subitem {invalidate\-Window}, 9
+    \subitem {is\-Cell\-Selected}, 21
+    \subitem {is\-Sudoku\-Complete}, 9
+    \subitem {number}, 21
+    \subitem {number\-\_\-clicked}, 9
+    \subitem {number\-Assigner}, 11
+    \subitem {on\-\_\-action\-Close\-\_\-triggered}, 11
+    \subitem {on\-\_\-action\-Easy\-\_\-triggered}, 11
+    \subitem {on\-\_\-action\-Hard\-\_\-triggered}, 12
+    \subitem {on\-\_\-action\-Medium\-\_\-triggered}, 13
+    \subitem {on\-\_\-action\-New\-\_\-triggered}, 14
+    \subitem {on\-\_\-action\-Open\-\_\-triggered}, 14
+    \subitem {on\-\_\-action\-Quit\-\_\-triggered}, 17
+    \subitem {on\-\_\-action\-Save\-\_\-triggered}, 17
+    \subitem {on\-\_\-clue\-Button\-\_\-clicked}, 18
+    \subitem {on\-\_\-hint\-Button\-\_\-clicked}, 18
+    \subitem {on\-\_\-normal\-Button\-\_\-clicked}, 18
+    \subitem {on\-\_\-null\-Button\-\_\-clicked}, 18
+    \subitem {on\-\_\-push\-Button\-\_\-clicked}, 19
+    \subitem {Sudoku}, 7
+    \subitem {sudoku\-Blank\-Checker}, 19
+    \subitem {sudoku\-Error\-Wiper}, 19
+    \subitem {sudoku\-Generator}, 19
+    \subitem {ui}, 21
+    \subitem {validate\-Cell}, 20
+    \subitem {validate\-Cell\-At\-Point\-With\-Number}, 20
+    \subitem {validate\-Window}, 21
+  \item {sudoku\-Blank\-Checker}
+    \subitem {Sudoku}, 19
+  \item {sudoku\-Error\-Wiper}
+    \subitem {Sudoku}, 19
+  \item {sudoku\-Generator}
+    \subitem {Sudoku}, 19
+
+  \indexspace
+
+  \item {time\-Added}
+    \subitem {Clock}, 3
+  \item {timer}
+    \subitem {Clock}, 3
+
+  \indexspace
+
+  \item {ui}
+    \subitem {Clock}, 3
+    \subitem {Q\-Push\-Button\-Grid}, 5
+    \subitem {Sudoku}, 21
+
+  \indexspace
+
+  \item {validate\-Cell}
+    \subitem {Sudoku}, 20
+  \item {validate\-Cell\-At\-Point\-With\-Number}
+    \subitem {Sudoku}, 20
+  \item {validate\-Window}
+    \subitem {Sudoku}, 21
+
+\end{theindex}

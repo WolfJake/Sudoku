@@ -1,0 +1,203 @@
+\section{Referencia de la Clase Clock}
+\label{class_clock}\index{Clock@{Clock}}
+
+
+{\ttfamily \#include $<$clock.\-h$>$}
+
+
+
+Diagrama de herencias de Clock
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_clock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboración para Clock\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{class_clock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Slots públicos}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf start\-Timer} ()
+\item 
+void {\bf stop\-Timer} ()
+\item 
+int {\bf get\-Time\-Score} ()
+\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Clock} (Q\-Widget $\ast$parent=0)
+\item 
+{\bf $\sim$\-Clock} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf time\-Added}
+\end{DoxyCompactItemize}
+\subsection*{Slots privados}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf show\-Time} ()
+\item 
+void {\bf init\-Gui} ()
+\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+Ui\-::\-Clock $\ast$ {\bf ui}
+\item 
+Q\-Time {\bf initial\-Time}
+\item 
+Q\-Timer $\ast$ {\bf timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentación del constructor y destructor}
+\index{Clock@{Clock}!Clock@{Clock}}
+\index{Clock@{Clock}!Clock@{Clock}}
+\subsubsection[{Clock}]{\setlength{\rightskip}{0pt plus 5cm}Clock\-::\-Clock (
+\begin{DoxyParamCaption}
+\item[{Q\-Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_clock_adf2e47dbbb338cc358bc21a1ad934701}
+
+\begin{DoxyCode}
+6                             :
+7     QLCDNumber(parent),
+8     ui(\textcolor{keyword}{new} Ui::Clock)
+9 \{
+10     ui->setupUi(\textcolor{keyword}{this});
+11     initGui();
+12 \}
+\end{DoxyCode}
+\index{Clock@{Clock}!$\sim$\-Clock@{$\sim$\-Clock}}
+\index{$\sim$\-Clock@{$\sim$\-Clock}!Clock@{Clock}}
+\subsubsection[{$\sim$\-Clock}]{\setlength{\rightskip}{0pt plus 5cm}Clock\-::$\sim$\-Clock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_clock_afc976ce68fa85e15cc06f9ed47bddb7c}
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{keyword}{delete} timer;
+17     \textcolor{keyword}{delete} ui;
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{Clock@{Clock}!get\-Time\-Score@{get\-Time\-Score}}
+\index{get\-Time\-Score@{get\-Time\-Score}!Clock@{Clock}}
+\subsubsection[{get\-Time\-Score}]{\setlength{\rightskip}{0pt plus 5cm}int Clock\-::get\-Time\-Score (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_clock_aa3935c3a56349542716d9aecd79b7947}
+
+\begin{DoxyCode}
+54 \{
+55     QTime time = QTime::currentTime();
+56     time = time.addSecs(-initialTime.hour() * 3600 - initialTime.minute() * 60 - 
+      initialTime.second());
+57     \textcolor{keywordflow}{return} time.hour() * 3600 + time.minute() * 60 + time.second();
+58 \}
+\end{DoxyCode}
+\index{Clock@{Clock}!init\-Gui@{init\-Gui}}
+\index{init\-Gui@{init\-Gui}!Clock@{Clock}}
+\subsubsection[{init\-Gui}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-::init\-Gui (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_clock_af48d4217fe802dd730a62a12e997a607}
+
+\begin{DoxyCode}
+21 \{
+22     setSegmentStyle(Filled);
+23     setWindowTitle(tr(\textcolor{stringliteral}{"Timer"}));
+24     resize(150, 60);
+25 \}
+\end{DoxyCode}
+\index{Clock@{Clock}!show\-Time@{show\-Time}}
+\index{show\-Time@{show\-Time}!Clock@{Clock}}
+\subsubsection[{show\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-::show\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{class_clock_adb348ce7f498c58896a67e4f87b9a165}
+
+\begin{DoxyCode}
+28 \{
+29     QTime time = QTime::currentTime();
+30     time = time.addSecs(-initialTime.hour() * 3600 - initialTime.minute() * 60 - 
+      initialTime.second());
+31     time = time.addSecs(timeAdded);
+32     QString text = time.toString(\textcolor{stringliteral}{"hh:mm:ss"});
+33 
+34     display(text);
+35 \}
+\end{DoxyCode}
+\index{Clock@{Clock}!start\-Timer@{start\-Timer}}
+\index{start\-Timer@{start\-Timer}!Clock@{Clock}}
+\subsubsection[{start\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-::start\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_clock_a4c236255a43ef536932608ae3bc71033}
+
+\begin{DoxyCode}
+38 \{
+39     timer = \textcolor{keyword}{new} QTimer(\textcolor{keyword}{this});
+40     connect(timer, SIGNAL(timeout()), \textcolor{keyword}{this}, SLOT(showTime()));
+41     timer->start(1000);
+42 
+43     initialTime = QTime::currentTime();
+44     display(\textcolor{stringliteral}{"00:00"});
+45     showTime();
+46 \}
+\end{DoxyCode}
+\index{Clock@{Clock}!stop\-Timer@{stop\-Timer}}
+\index{stop\-Timer@{stop\-Timer}!Clock@{Clock}}
+\subsubsection[{stop\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void Clock\-::stop\-Timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_clock_ad687c99536ba2b5578b77b208d7e3fdf}
+
+\begin{DoxyCode}
+49 \{
+50     timer->stop();
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{Clock@{Clock}!initial\-Time@{initial\-Time}}
+\index{initial\-Time@{initial\-Time}!Clock@{Clock}}
+\subsubsection[{initial\-Time}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Time Clock\-::initial\-Time\hspace{0.3cm}{\ttfamily [private]}}\label{class_clock_ad06c7d67265fe4b6909be8e95e669490}
+\index{Clock@{Clock}!time\-Added@{time\-Added}}
+\index{time\-Added@{time\-Added}!Clock@{Clock}}
+\subsubsection[{time\-Added}]{\setlength{\rightskip}{0pt plus 5cm}int Clock\-::time\-Added}\label{class_clock_ae2a6285de90ddc3a034d4fd9982e8c24}
+\index{Clock@{Clock}!timer@{timer}}
+\index{timer@{timer}!Clock@{Clock}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Timer$\ast$ Clock\-::timer\hspace{0.3cm}{\ttfamily [private]}}\label{class_clock_ab51e4108c5a6a16e851cad646e77d9ba}
+\index{Clock@{Clock}!ui@{ui}}
+\index{ui@{ui}!Clock@{Clock}}
+\subsubsection[{ui}]{\setlength{\rightskip}{0pt plus 5cm}Ui\-::\-Clock$\ast$ Clock\-::ui\hspace{0.3cm}{\ttfamily [private]}}\label{class_clock_a60b333971122a727784de3d380642a4d}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\-:\begin{DoxyCompactItemize}
+\item 
+I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/{\bf clock.\-h}\item 
+I\-:/\-Sudoku-\/master/\-Sudoku/\-Functional Version/{\bf clock.\-cpp}\end{DoxyCompactItemize}

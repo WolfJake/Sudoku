@@ -1,0 +1,79 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Documentaci\IeC {\'o}n de las clases}{1}
+\contentsline {section}{\numberline {1.1}Referencia de la Clase Clock}{1}
+\contentsline {subsection}{\numberline {1.1.1}Documentaci\IeC {\'o}n del constructor y destructor}{2}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Clock}{2}
+\contentsline {subsubsection}{\numberline {1.1.1.2}$\sim $\discretionary {-}{}{}Clock}{2}
+\contentsline {subsection}{\numberline {1.1.2}Documentaci\IeC {\'o}n de las funciones miembro}{2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}get\discretionary {-}{}{}Time\discretionary {-}{}{}Score}{2}
+\contentsline {subsubsection}{\numberline {1.1.2.2}init\discretionary {-}{}{}Gui}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.3}show\discretionary {-}{}{}Time}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.4}start\discretionary {-}{}{}Timer}{3}
+\contentsline {subsubsection}{\numberline {1.1.2.5}stop\discretionary {-}{}{}Timer}{3}
+\contentsline {subsection}{\numberline {1.1.3}Documentaci\IeC {\'o}n de los datos miembro}{3}
+\contentsline {subsubsection}{\numberline {1.1.3.1}initial\discretionary {-}{}{}Time}{3}
+\contentsline {subsubsection}{\numberline {1.1.3.2}time\discretionary {-}{}{}Added}{3}
+\contentsline {subsubsection}{\numberline {1.1.3.3}timer}{3}
+\contentsline {subsubsection}{\numberline {1.1.3.4}ui}{3}
+\contentsline {section}{\numberline {1.2}Referencia de la Clase Q\discretionary {-}{}{}Push\discretionary {-}{}{}Button\discretionary {-}{}{}Grid}{3}
+\contentsline {subsection}{\numberline {1.2.1}Documentaci\IeC {\'o}n del constructor y destructor}{5}
+\contentsline {subsubsection}{\numberline {1.2.1.1}Q\discretionary {-}{}{}Push\discretionary {-}{}{}Button\discretionary {-}{}{}Grid}{5}
+\contentsline {subsubsection}{\numberline {1.2.1.2}$\sim $\discretionary {-}{}{}Q\discretionary {-}{}{}Push\discretionary {-}{}{}Button\discretionary {-}{}{}Grid}{5}
+\contentsline {subsection}{\numberline {1.2.2}Documentaci\IeC {\'o}n de los datos miembro}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.1}assigned\discretionary {-}{}{}Number}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.2}color}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.3}column}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.4}is\discretionary {-}{}{}Constant}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.5}real\discretionary {-}{}{}Number}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.6}row}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.7}ui}{5}
+\contentsline {section}{\numberline {1.3}Referencia de la Clase Sudoku}{5}
+\contentsline {subsection}{\numberline {1.3.1}Documentaci\IeC {\'o}n del constructor y destructor}{7}
+\contentsline {subsubsection}{\numberline {1.3.1.1}Sudoku}{7}
+\contentsline {subsubsection}{\numberline {1.3.1.2}$\sim $\discretionary {-}{}{}Sudoku}{7}
+\contentsline {subsection}{\numberline {1.3.2}Documentaci\IeC {\'o}n de las funciones miembro}{7}
+\contentsline {subsubsection}{\numberline {1.3.2.1}cell\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{7}
+\contentsline {subsubsection}{\numberline {1.3.2.2}init\discretionary {-}{}{}Gui}{8}
+\contentsline {subsubsection}{\numberline {1.3.2.3}invalidate\discretionary {-}{}{}Window}{9}
+\contentsline {subsubsection}{\numberline {1.3.2.4}is\discretionary {-}{}{}Sudoku\discretionary {-}{}{}Complete}{9}
+\contentsline {subsubsection}{\numberline {1.3.2.5}number\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{9}
+\contentsline {subsubsection}{\numberline {1.3.2.6}number\discretionary {-}{}{}Assigner}{11}
+\contentsline {subsubsection}{\numberline {1.3.2.7}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Close\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{11}
+\contentsline {subsubsection}{\numberline {1.3.2.8}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Easy\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{11}
+\contentsline {subsubsection}{\numberline {1.3.2.9}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Hard\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{12}
+\contentsline {subsubsection}{\numberline {1.3.2.10}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Medium\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{13}
+\contentsline {subsubsection}{\numberline {1.3.2.11}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}New\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{14}
+\contentsline {subsubsection}{\numberline {1.3.2.12}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Open\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{15}
+\contentsline {subsubsection}{\numberline {1.3.2.13}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Quit\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{17}
+\contentsline {subsubsection}{\numberline {1.3.2.14}on\discretionary {-}{}{}\_\discretionary {-}{}{}action\discretionary {-}{}{}Save\discretionary {-}{}{}\_\discretionary {-}{}{}triggered}{17}
+\contentsline {subsubsection}{\numberline {1.3.2.15}on\discretionary {-}{}{}\_\discretionary {-}{}{}clue\discretionary {-}{}{}Button\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{18}
+\contentsline {subsubsection}{\numberline {1.3.2.16}on\discretionary {-}{}{}\_\discretionary {-}{}{}hint\discretionary {-}{}{}Button\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{18}
+\contentsline {subsubsection}{\numberline {1.3.2.17}on\discretionary {-}{}{}\_\discretionary {-}{}{}normal\discretionary {-}{}{}Button\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{18}
+\contentsline {subsubsection}{\numberline {1.3.2.18}on\discretionary {-}{}{}\_\discretionary {-}{}{}null\discretionary {-}{}{}Button\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{19}
+\contentsline {subsubsection}{\numberline {1.3.2.19}on\discretionary {-}{}{}\_\discretionary {-}{}{}push\discretionary {-}{}{}Button\discretionary {-}{}{}\_\discretionary {-}{}{}clicked}{19}
+\contentsline {subsubsection}{\numberline {1.3.2.20}sudoku\discretionary {-}{}{}Blank\discretionary {-}{}{}Checker}{19}
+\contentsline {subsubsection}{\numberline {1.3.2.21}sudoku\discretionary {-}{}{}Error\discretionary {-}{}{}Wiper}{19}
+\contentsline {subsubsection}{\numberline {1.3.2.22}sudoku\discretionary {-}{}{}Generator}{19}
+\contentsline {subsubsection}{\numberline {1.3.2.23}validate\discretionary {-}{}{}Cell}{20}
+\contentsline {subsubsection}{\numberline {1.3.2.24}validate\discretionary {-}{}{}Cell\discretionary {-}{}{}At\discretionary {-}{}{}Point\discretionary {-}{}{}With\discretionary {-}{}{}Number}{20}
+\contentsline {subsubsection}{\numberline {1.3.2.25}validate\discretionary {-}{}{}Window}{21}
+\contentsline {subsection}{\numberline {1.3.3}Documentaci\IeC {\'o}n de los datos miembro}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.1}cell}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.2}clock}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.3}coor\discretionary {-}{}{}X}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.4}coor\discretionary {-}{}{}Y}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.5}crypt}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.6}is\discretionary {-}{}{}Cell\discretionary {-}{}{}Selected}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.7}number}{21}
+\contentsline {subsubsection}{\numberline {1.3.3.8}ui}{21}
+\contentsline {chapter}{\numberline {2}Documentaci\IeC {\'o}n de archivos}{23}
+\contentsline {section}{\numberline {2.1}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/clock.cpp}{23}
+\contentsline {section}{\numberline {2.2}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/clock.h}{23}
+\contentsline {section}{\numberline {2.3}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/main.cpp}{24}
+\contentsline {subsection}{\numberline {2.3.1}Documentaci\IeC {\'o}n de las funciones}{25}
+\contentsline {subsubsection}{\numberline {2.3.1.1}main}{25}
+\contentsline {section}{\numberline {2.4}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/qpushbuttongrid.cpp}{25}
+\contentsline {section}{\numberline {2.5}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/qpushbuttongrid.h}{26}
+\contentsline {section}{\numberline {2.6}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/sudoku.cpp}{27}
+\contentsline {section}{\numberline {2.7}Referencia del Archivo I\discretionary {-}{}{}:/\discretionary {-}{}{}Sudoku-\/master/\discretionary {-}{}{}Sudoku/\discretionary {-}{}{}Functional Version/sudoku.h}{28}
+\contentsline {part}{\IeC {\'I}ndice}{29}

@@ -1,0 +1,4 @@
+<map id="Sudoku" name="Sudoku">
+<area shape="rect" id="node3" href="$class_q_push_button_grid.html" title="QPushButtonGrid" alt="" coords="137,83,260,109"/>
+<area shape="rect" id="node5" href="$class_clock.html" title="Clock" alt="" coords="290,83,344,109"/>
+</map>

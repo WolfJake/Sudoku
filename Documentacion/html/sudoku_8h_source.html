@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.4"/>
+<title>SUDOKU: Fichero Fuente I:/Sudoku-master/Sudoku/Functional Version/sudoku.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="portada.jpg"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SUDOKU
+   </div>
+   <div id="projectbrief">Proyecto de Lenguajes de Programacion</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.4 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6d1a1c7eebc0e8400c6ecef005e046f8.html">I:</a></li><li class="navelem"><a class="el" href="dir_879fe5ab0b34169c6af71fefe67d8479.html">Sudoku-master</a></li><li class="navelem"><a class="el" href="dir_16810629fa771c688f96bc8226ff4cfd.html">Sudoku</a></li><li class="navelem"><a class="el" href="dir_6e98f717987fbaa80058d5737c3e900d.html">Functional Version</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">sudoku.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sudoku_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SUDOKU_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SUDOKU_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QMainWindow&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>Ui {</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">class </span><a class="code" href="class_sudoku.html">Sudoku</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span>QGridLayout;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">class </span>QPushButton;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="class_q_push_button_grid.html">QPushButtonGrid</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">class </span><a class="code" href="class_clock.html">Clock</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="class_sudoku.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sudoku.html">Sudoku</a> : <span class="keyword">public</span> QMainWindow</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="class_sudoku.html#a668fb7917f321f44537700627aff6f6f">Sudoku</a>(QWidget *parent = 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_sudoku.html#a9c949b824fa3d98d3515dbecb8cf413e">~Sudoku</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a33a266169f608cb176e52e0dd5293787">initGui</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sudoku.html#a17c2916965e88a8320a27ba500312781">validateCellAtPointWithNumber</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column, <span class="keywordtype">int</span> value, <span class="keywordtype">int</span> counter);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sudoku.html#a7e53c34c777decdaada1d440d86e58b1">numberAssigner</a>(<span class="keywordtype">int</span> counter, <span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a6b418375859459ac2d8a2322c859716c">sudokuGenerator</a>(<span class="keywordtype">int</span> row);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sudoku.html#a4b6d5ef28b793ebbb724895ac442ae55">sudokuBlankChecker</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#aa12dc5749d1320da9147573124d06bab">sudokuErrorWiper</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sudoku.html#a6518dedf49afee9803e050600a00ea11" title="Funcion Booleana Sudoku Completo. ">isSudokuComplete</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#ab8c844f67d42d12dfe059a3097d622c4">number_clicked</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a660ca7cc295d016f2a4d707367acc9d5">cell_clicked</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a68fbf8b7fcedb7a5afb1613d24539ea6">on_nullButton_clicked</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a655abc6f3d6f08de44d0dcb238cff609">validateCell</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a3028aabf8a606dd8e6b0779e6bea2c4c">on_actionNew_triggered</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a8f592aa1ab2775c1f21552fdfb71b5e9">on_actionOpen_triggered</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a817942cdc7985987c945543f0dc05603">on_actionSave_triggered</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a79069f036772a0dc5f59699de14d07e9">on_actionClose_triggered</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a1551bc97b5be4c8d9222a979f82a5a56">on_actionQuit_triggered</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a3fb178a0c3de62cd74523f328b65de43">validateWindow</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#ae0a3f54d7a5afd65b0445b86d29ffc1b">invalidateWindow</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a8d0a05b91d78532d1c243794f3a0c5a5">on_pushButton_clicked</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a6bb744dbd4932a05ea1eb95fe540b011" title="Game Mode Normal (Modo de Juego) ">on_normalButton_clicked</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a7d6bce4fbc30b1ef0c685bbd66cdb02b" title="Game Mode Hint (Modo de Juego Hint) ">on_hintButton_clicked</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a286dad19725f19a88ec9c7f105de3cbe" title="Game Mode Clue(Modo de Juego) ">on_clueButton_clicked</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a2be67a14f8f770d93e103b58f349697f" title="Nivel FACIL. ">on_actionEasy_triggered</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a9c69cba777772702b6beca245053c4fd" title="Nivel DIFICIL. ">on_actionMedium_triggered</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sudoku.html#a29224573d539d6d1cd26e47fcbe10bab" title="Nivel DIFICIL. ">on_actionHard_triggered</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="class_sudoku.html#a7fc8f4919ce476b22573aca1f575c043">   78</a></span>&#160;    Ui::Sudoku *<a class="code" href="class_sudoku.html#a7fc8f4919ce476b22573aca1f575c043">ui</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="class_sudoku.html#acbb2bd7c0efadc73e97c5f6ad4161500">   80</a></span>&#160;    <a class="code" href="class_q_push_button_grid.html">QPushButtonGrid</a> *<a class="code" href="class_sudoku.html#acbb2bd7c0efadc73e97c5f6ad4161500">cell</a>[9][9];</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="class_sudoku.html#a9c3c3126866b542b88df8e06fbb3e914">   81</a></span>&#160;    QPushButton *<a class="code" href="class_sudoku.html#a9c3c3126866b542b88df8e06fbb3e914">number</a>[9];</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="class_sudoku.html#a1171a2abb7a8199a3a6d7874152b0be9">   82</a></span>&#160;    QString <a class="code" href="class_sudoku.html#a1171a2abb7a8199a3a6d7874152b0be9">crypt</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="class_sudoku.html#af7e939f97682b7100421c4a666ae983a">   83</a></span>&#160;    <a class="code" href="class_clock.html">Clock</a> *<a class="code" href="class_sudoku.html#af7e939f97682b7100421c4a666ae983a">clock</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="class_sudoku.html#a6ca702d6de2e14a9d1aa390e923a1076">   85</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_sudoku.html#a6ca702d6de2e14a9d1aa390e923a1076">coorX</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="class_sudoku.html#a131e715c7a71179070919327b99ea4f1">   86</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_sudoku.html#a131e715c7a71179070919327b99ea4f1">coorY</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="class_sudoku.html#a53be3a6ab53097bd79fcdd19b19805e3">   87</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_sudoku.html#a53be3a6ab53097bd79fcdd19b19805e3">isCellSelected</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif // SUDOKU_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado el Martes, 9 de Julio de 2013 14:37:05 para SUDOKU por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.4
+</small></address>
+</body>
+</html>
